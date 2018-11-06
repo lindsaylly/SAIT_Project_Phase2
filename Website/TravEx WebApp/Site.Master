@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="TravEx_WebApp.Site" %>
+<%---------------------------------------------------
+    This page created by Lindsay Li 
+    Header, footer, nav bar by Carol He
+    -------------------------------------------------%>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Travel Expert</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/fa-solid.min.css" />
+    <link rel="stylesheet" href="styles/fontawesome.min.css" />
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>        
+    <link href="styles/HeaderAndFooter.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <header>
+                <div class="bg-info text-white">
+                    <h2>Travel <img src="images/logo.png" width="10%" height="55%"/> Experts</h2>
+                    <h3><i id="phoneicon" class="fas fa-phone"></i> Call Us: 1-403-271-9872</h3>
+                </div>
+
+                <nav id="nav1">
+                    <ul id="navul">
+                        <li><asp:HyperLink ID="HyperIndex" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
+                        <li><a href="packages.php">About Us</a></li>
+                        <li><a href="customer_registration_form.php">Packages</a></li>
+					    <li><a href="login.php">Contact</a></li>
+                        <li><asp:HyperLink ID="HyperLogin1" runat="server" NavigateUrl="~/SignUp.aspx">Login/Register</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MyAccount.aspx">Profile</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/OrderSummary.aspx">My Bookings</asp:HyperLink></li>
+                        <li><asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink></li>                                           
+                    </ul>
+
+                </nav>
+                
+            <!---Hamburger Menu----------------------------------------------------------------------------------------------->
+			<!--Navbar-->
+			<nav id="nav2" class="navbar navbar-light light-blue lighten-4">
+
+			<!-- Navbar brand -->
+			<a class="navbar-brand" href="#"></a>
+
+			<!-- Collapse button -->
+			<button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+				aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fa fa-bars fa-1x"></i></span></button>
+
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+				<!-- Links -->
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="packages.php">About Us</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="customer_registration_form.php">Packages</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login.php">Contact</a>
+					</li>
+					<li class="nav-item">				
+                        <asp:HyperLink ID="HyperLogin2" CssClass="nav-link" runat="server" NavigateUrl="~/SignUp.aspx">Login/Register</asp:HyperLink>
+					</li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink5" CssClass="nav-link" runat="server" NavigateUrl="~/MyAccount.aspx">Personal Information</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink6" CssClass="nav-link" runat="server" NavigateUrl="~/OrderSummary.aspx">My Bookings</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <asp:HyperLink ID="HyperLink7" CssClass="nav-link" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
+                    </li>
+				</ul>
+				<!-- Links -->
+
+			</div>
+			<!-- Collapsible content -->
+
+			</nav>
+			<!--/.Navbar-->
+            </header>
+            <main>
+                <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>           
+            </main>
+            <footer>
+                <h5 class="text-info">Copyright &copy; Travel Experts 2018</h5>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
